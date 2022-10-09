@@ -21,10 +21,10 @@ for(i=0;i<n-1;i++)
 for(i=0;i<n;i++)
 {
     sum=sum+a[i]; }
-mean=sum/n;
+mean=sum*1.0/n;
 printf("mean is %f\n" ,mean);
 if(n%2==0)
-    median=(a[n/2]+a[(n+1)/2])/2;
+    median=(a[n/2]+a[(n+1)/2])*1.0/2;
 else
     median=a[n/2];
 printf("median is %f\n" ,median);
