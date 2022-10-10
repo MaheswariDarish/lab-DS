@@ -1,7 +1,7 @@
 #include<stdio.h>
 void main() 
 {
-    int n, a[50],i,j,mode=0,temp,count=0,maxcount=0,sum=0;
+    int n, a[50],i,j,mode=0,temp,maxcount=0,sum=0,maxvalue;
     float mean,median;
     printf("enter number of elements\n");
     scanf("%d",&n);
@@ -28,16 +28,22 @@ if(n%2==0)
 else
     median=a[n/2];
 printf("median is %f\n" ,median);
-for(i=0;i<n-1;i++)
-    for(j=i+1;j<n;j++)
-    { 
+for(i=0;i<n;i++)
+{
+    int count =0;
+    for(j=i;j<n;j++)
+    {
         if(a[i]==a[j])
             count++;
+    }
+
     if(count>maxcount)
-    { 
-        maxcount=count;
-        mode=a[i];
+    {
+    maxcount=count;
+    maxvalue=a[i];
     }
-    }
- printf("mode is %d\n",mode);
+
+}
+mode=maxvalue;
+printf("%d is the mode",mode);
 }
